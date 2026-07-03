@@ -1,9 +1,9 @@
-const express =require('express')
-
+const express=require('express')
 const app=express()
+const port=process.env.PORT||3002
 
-const PORT=3002;
 
-app.listen(PORT,function(){
-    console.log("successfully running at http://localhost:" + PORT);
-});
+app.use(express.static("frontend"))
+app.listen(port,function(){
+    console.log("succesfully running at http://localhost:"+port)
+})

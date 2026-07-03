@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/jangamnithya/autosuggest/issues"
   },
-  "homepage": "https://github.com/jangamnithya/autosuggest#readme"
+  "homepage": "https://github.com/jangamnithya/autosuggest#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

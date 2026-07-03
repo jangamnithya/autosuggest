@@ -1,4 +1,22 @@
 h1{
-    color: red;
+    color:red;
+}
 
+
+#home-intro{
+    text-align: center;
+   /* border-width: 3px;
+border-style: solid;
+border-color: blue; */
+
+    border:3px solid yellowgreen;
+}
+    #home-intro:hover{
+        background-color:burlywood;
+    }
+
+
+
+    #p2{
+    color:blue;
 }

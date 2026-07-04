@@ -1,0 +1,21 @@
+.search-box{
+    position: relative;
+    width: 380px;
+    margin: auto;
+}
+
+.search-box input{
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px; /* Space for the icon */
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.search-icon{
+    position: absolute;
+    right: 12px;   /* Moves icon to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}

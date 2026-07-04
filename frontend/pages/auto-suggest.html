@@ -19,7 +19,7 @@
                 margin-top:100px;
             }
             .logo{
-                color:rgba(109, 25, 219, 0.854);
+                color:Blue;
             }
             .ge{
                 color:gray;
@@ -34,7 +34,7 @@
                 width:30%;
             }
             #sug{
-                /*border:1px solid black;*/
+                /* border:1px solid black; */
                 width:30%;
                 margin-left:36%;
             }
@@ -52,12 +52,49 @@
      
      <span class="lens">&#128269;</span>
      <label>
-        <input class="box" type="text" placeholder="Start typing to search">
+        <input class="box" id="box" type="text" placeholder="Start typing to search">
      </label>
      </span>
      <div id="sug">
         <!-- Suggestion box -->
      </div>
      </div>
+     <script>
+        var searchbox=document.querySelector("#box");
+        var suggestionBox=document.querySelector("#sug");
+        searchbox.addEventListener("input",function(){
+           //get user typed text
+            var userInput=searchbox.value;
+            if(userInput.trim()===""){
+
+            }
+            else
+            {
+                var url1= "https://autosuggest-backend.onrender.com/api/autosuggest?q="
+                var url2 = "&algorithm=brute&limit=10&weighted=false";
+                var url = url1 + userInput + url2;
+            }
+           // make api call to get suggestions
+           fetch(url)
+           .then(function(response){
+            return response .json();
+           })
+           .then(function(data){
+            console.log(data);
+            
+            var resultArray=data.results;
+            var res="";
+            for(var i=0;i<resultArray.length;i++){
+                res+="<div>"+resultArray[i].text+"</div>";
+            }
+            suggestionBox.innerHTML=res;
+           })
+         
+
+           // display data in html
+          
+           
+        })
+     </script>
      </body>
 </html>
